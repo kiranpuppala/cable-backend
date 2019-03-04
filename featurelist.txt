@@ -1,0 +1,114 @@
+A website
+
+Features 
+
+Operator 
+    - LOGIN AND SIGNUP  
+    - ADD USER 
+    - SHOW USERS
+    - EACH USER DETAILS. 
+        GENERAL DETAILS 
+           - SET TOP BOX ID,NAME,EMAIL,CHANNELS 
+        PAYMENT DETAILS  
+
+Customer 
+    - LOGIN AND SIGNUP 
+    - SEE CHANNELS 
+    - ADD/REMOVE CHANNELS 
+    - PAYMENT 
+
+----------------------------------------------------------------------
+
+Technology
+
+Front-End 
+    ReactJS 
+    Semantic-UI 
+
+Back-End 
+    NodeJS, MySQL
+    
+----------------------------------------------------------------------\
+
+DATA MODEL 
+
+A. OPERATOR
+
+1.profiles
+    profile_picture
+    username 
+    email 
+    mobile
+    password 
+    operator_id
+    area
+    customers
+    created_at 
+    modified_at
+
+B. CUSTOMER 
+    profile_picture 
+    username 
+    email
+    mobile
+    password 
+    customer_id 
+    address 
+    channels 
+    created_at 
+    modified_at
+
+
+----------------------------------------------------------------------
+
+CREATE TABLE `operators` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `profile_picture` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `user_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `mobile` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `operator_id` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `area` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `customers` text COLLATE utf8_unicode_ci NOT NULL,
+ `created_at` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `modified_at` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+
+CREATE TABLE `customers` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `profile_picture` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `user_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `mobile` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `customer_id` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `address` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `channels` text COLLATE utf8_unicode_ci NOT NULL,
+ `created_at` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+ `modified_at` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
