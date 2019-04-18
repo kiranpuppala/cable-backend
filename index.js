@@ -41,9 +41,14 @@ function verifyToken(req, res, next) {
   }
 }
 
-router.get('/', function (req, res) {
-  res.json({ message: 'we are cable operators' });
+router.get('/.well-known/assetlinks.json', function (req, res) {
+  res.sendFile('assetlinks.json', { root: __dirname })
 });
+
+router.get('/', function (req, res) {
+  res.sendFile('custom.html', { root: __dirname })
+});
+
 
 router.post('/operator-register', operator_auth.register);
 router.post('/operator-login', operator_auth.login)
@@ -51,6 +56,6 @@ router.post('/customer-register', customer_auth.register);
 router.post('/customer-login', customer_auth.login)
 
 
-app.use('/api', router);
+app.use('/', router);
 
 app.listen(5000);

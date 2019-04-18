@@ -2,9 +2,12 @@ var bcrypt = require('bcrypt');
 var db = require('./dbconnect');
 var config = require('../config');
 const jwt = require('jsonwebtoken');
+const init = require('./initializeDb');
+
 
 
 exports.register = function (req, res) {
+  init.initializeDb();
   var today = new Date();
   bcrypt.hash(req.body.password, 10, function (err, hash) {
     var users = {

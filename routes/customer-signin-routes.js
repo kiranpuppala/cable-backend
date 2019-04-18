@@ -2,14 +2,17 @@ var bcrypt = require('bcrypt');
 var db = require('./dbconnect');
 var config = require('../config');
 const jwt = require('jsonwebtoken');
+const init = require('./initializeDb');
 
 
 exports.register = function (req, res) {
+  init.createTables();
   var today = new Date();
   bcrypt.hash(req.body.password, 10, function (err, hash) {
     var users = {
       "profile_picture": req.body.profile_picture,
-      "user_name": req.body.user_name,
+      "proof" : req.body.proof,
+      "name": req.body.user_name,
       "email": req.body.email,
       "mobile": req.body.mobile,
       "password": hash,
